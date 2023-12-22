@@ -157,11 +157,18 @@ def process_archived_website(url, start_date, end_date, interval):
             if trackers:
                 print(f"Found {len(trackers)} trackers on {archive_url}:")
                 for tracker in trackers:
-                    print(f" - {tracker['type']}: {tracker['url']}")
+                    split_url = tracker['url'].split('/')
+                    if len(split_url) > 8:
+                        tracker_id = '/'.join(split_url[7:8])
+                        
+                        print(f" - {tracker['type']}: {tracker_id}")
+                    else:
+                        print(f" - {tracker['type']}: URL too short to split")
             else:
                 print(f"No specific known trackers found on {archive_url}. Listing all external URLs:")
                 for ext_url in external_urls:
                     print(f" - {ext_url}")
+
 
 # Input timeframe and interval
 start_date = datetime.datetime(2018, 1, 1)  
