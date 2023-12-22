@@ -160,7 +160,7 @@ def process_archived_website(url, start_date, end_date, interval):
                     split_url = tracker['url'].split('/')
                     if len(split_url) > 8:
                         tracker_id = '/'.join(split_url[7:8])
-                        
+
                         print(f" - {tracker['type']}: {tracker_id}")
                     else:
                         print(f" - {tracker['type']}: URL too short to split")
@@ -173,15 +173,113 @@ def process_archived_website(url, start_date, end_date, interval):
 # Input timeframe and interval
 start_date = datetime.datetime(2018, 1, 1)  
 end_date = datetime.datetime(2020, 1, 1)    
-interval = datetime.timedelta(days=270)      
+interval = datetime.timedelta(days=365)      
 
 # List of websites to check 
-websites = [
-     'https://indianexpress.com',
-     'https://aajtak.com',
-     'https://time.com/',
-     'https://www.thehindu.com/'
+websites = websites = [
+    'https://www.ndtv.com',
+    'https://www.hindustantimes.com',
+    'https://www.indiatoday.in',
+    'https://www.news18.com',
+    'https://www.timesofindia.indiatimes.com',
+    'https://www.dnaindia.com',
+    'https://www.deccanherald.com',
+    'https://www.theindianexpress.com',
+    'https://www.telegraphindia.com',
+    'https://www.dailypioneer.com',
+    'https://www.firstpost.com',
+    'https://www.financialexpress.com',
+    'https://www.tribuneindia.com',
+    'https://www.business-standard.com',
+    'https://www.livemint.com',
+    'https://www.outlookindia.com',
+    'https://www.scroll.in',
+    'https://www.rediff.com',
+    'https://www.asianage.com',
+    'https://www.thequint.com',
+    'https://www.newindianexpress.com',
+    'https://www.deccanchronicle.com',
+    'https://www.mid-day.com',
+    'https://www.daijiworld.com',
+    'https://www.greaterkashmir.com',
+    'https://www.kashmirtimes.com',
+    'https://www.milligazette.com',
+    'https://www.prabhatkhabar.com',
+    'https://www.navbharattimes.indiatimes.com',
+    'https://www.jagran.com',
+    'https://www.bhaskar.com',
+    'https://www.amarujala.com',
+    'https://www.patrika.com',
+    'https://www.loksatta.com',
+    'https://www.divyabhaskar.co.in',
+    'https://www.mathrubhumi.com',
+    'https://www.manoramaonline.com',
+    'https://www.dinamalar.com',
+    'https://www.dinakaran.com',
+    'https://www.dailythanthi.com',
+    'https://www.anandabazar.com',
+    'https://www.sakal.com',
+    'https://www.eenadu.net',
+    'https://www.sakshi.com',
+    'https://www.andhrajyothy.com',
+    'https://www.prajavani.net',
+    'https://www.udayavani.com',
+    'https://www.vijaykarnataka.com',
+    'https://www.kannadaprabha.com',
+    'https://www.samyukthakarnataka.com',
+    'https://www.guwahatiplus.com',
+    'https://www.sentinelassam.com',
+    'https://www.nagalandpost.com',
+    'https://www.easternmirrornagaland.com',
+    'https://www.thesangaiexpress.com',
+    'https://www.imphaltimes.com',
+    'https://www.morungexpress.com',
+    'https://www.sikkimexpress.com',
+    'https://www.thehimalayantimes.com',
+    'https://www.kashmirreader.com',
+    'https://www.dailypioneer.com',
+    'https://www.orissapost.com',
+    'https://www.dharitri.com',
+    'https://www.samajaepaper.in',
+    'https://www.otvnews.com',
+    'https://www.sambadepaper.com',
+    'https://www.greaterjammu.com',
+    'https://www.stateobserver.com',
+    'https://www.dailyexcelsior.com',
+    'https://www.kashmirmonitor.in',
+    'https://www.dailykashmirlink.com',
+    'https://www.epilogue.in',
+    'https://www.kashmirlife.net',
+    'https://www.risingkashmir.com',
+    'https://www.thekashmirwalla.com',
+    'https://www.himvani.com',
+    'https://www.tribuneindia.com',
+    'https://www.punjabkesari.in',
+    'https://www.dainiksaveratimes.com',
+    'https://www.jagbani.punjabkesari.in',
+    'https://www.dailyajit.com',
+    'https://www.rozanaspokesman.com',
+    'https://www.babushahi.com',
+    'https://www.himtimes.com',
+    'https://www.divyahimachal.com',
+    'https://www.5dariyanews.com',
+    'https://www.himachalwatcher.com',
+    'https://www.khaskhabar.com',
+    'https://www.rajasthanpatrika.patrika.com',
+    'https://www.dainiknavajyoti.com',
+    'https://www.udaipurkiran.com',
+    'https://www.dainikbhaskarup.com',
+    'https://www.jansatta.com',
+    'https://www.punjabitribuneonline.com',
+    'https://www.pratidintime.com',
+    'https://www.assamtimes.org',
+    'https://www.northeasttoday.in',
+    'https://www.guwahatiplus.com',
+    'https://www.nelive.in',
+    'https://www.dailynewsandanalysis.com'
 ]
+
+
 
 # Running the script for each website
 for website in websites:
