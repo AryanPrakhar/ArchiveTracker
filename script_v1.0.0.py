@@ -171,19 +171,14 @@ def process_archived_website(url, start_date, end_date, interval):
 
 
 # Input timeframe and interval
-start_date = datetime.datetime(2018, 1, 1)  
+start_date = datetime.datetime(2015, 1, 1)  
 end_date = datetime.datetime(2020, 1, 1)    
 interval = datetime.timedelta(days=365)      
 
 # List of websites to check 
 websites = websites = [
-    'https://www.ndtv.com',
-    'https://www.hindustantimes.com',
-    'https://www.indiatoday.in',
-    'https://www.news18.com',
     'https://www.timesofindia.indiatimes.com',
     'https://www.dnaindia.com',
-    'https://www.deccanherald.com',
     'https://www.theindianexpress.com',
     'https://www.telegraphindia.com',
     'https://www.dailypioneer.com',
